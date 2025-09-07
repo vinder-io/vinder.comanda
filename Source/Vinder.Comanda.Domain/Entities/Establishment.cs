@@ -6,6 +6,9 @@ public sealed class Establishment : Entity
     public string Slug { get; private set; } = default!;
     public string Description { get; private set; } = default!;
 
+    public Owner Owner { get; private set; } = default!;
+    public Branding Branding { get; private set; } = default!;
+
     public IEnumerable<Product> Products { get; private set; } = [];
     public IEnumerable<Category> Categories { get; private set; } = [];
 
@@ -23,4 +26,10 @@ public sealed class Establishment : Entity
 
     public void SetEstablishmentCategories(IEnumerable<Category> categories) =>
         Categories = categories;
+
+    public void SetEstablishmentOwner(Owner owner) =>
+        Owner = owner;
+
+    public void SetEstablishmentBranding(Branding branding) =>
+        Branding = branding;
 }
