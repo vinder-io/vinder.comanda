@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>f174bcf5-a66d-40be-820c-578cd9257ee7</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Vinder.Comanda.Application/Vinder.Comanda.Application.csproj" />
+    <ProjectReference Include="../Vinder.Comanda.Domain/Vinder.Comanda.Domain.csproj" />
+    <ProjectReference Include="../Vinder.Comanda.Infrastructure/Vinder.Comanda.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
