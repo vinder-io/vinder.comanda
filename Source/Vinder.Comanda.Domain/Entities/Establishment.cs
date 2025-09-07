@@ -11,7 +11,6 @@ public sealed class Establishment : Entity
 
     public ICollection<Product> Products { get; private set; } = [];
     public ICollection<Category> Categories { get; private set; } = [];
-    public ICollection<Order> Orders { get; private set; } = [];
 
     public void SetEstablishmentDescription(string description) =>
         Description = description.Trim().Normalize(NormalizationForm.FormC);
