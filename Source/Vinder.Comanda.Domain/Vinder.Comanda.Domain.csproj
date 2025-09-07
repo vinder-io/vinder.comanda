@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../Vinder.Comanda.Common/Vinder.Comanda.Common.csproj" />
+  </ItemGroup>
+
 </Project>
