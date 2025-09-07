@@ -2,7 +2,7 @@
 
 public abstract class Entity
 {
-    public int Id { get; set; }
+    public string Id { get; private set; } = default!;
     public bool IsDeleted { get; private set; }
 
     public DateTime CreatedAt { get; private set; } = DateTime.Now;
