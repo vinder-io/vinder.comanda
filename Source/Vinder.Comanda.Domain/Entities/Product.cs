@@ -7,7 +7,7 @@ public sealed class Product : Entity
     public decimal Price { get; private set; }
 
     public ProductMetadata Metadata { get; private set; } = default!;
-    public IEnumerable<Image> Images { get; private set; } = [];
+    public Image Image { get; private set; } = default!;
 
     public void SetProductDescription(string description) =>
         Description = description.Trim().Normalize(NormalizationForm.FormC);
@@ -18,8 +18,8 @@ public sealed class Product : Entity
     public void SetProductPrice(decimal price) =>
         Price = price;
 
-    public void SetProductImages(IEnumerable<Image> images) =>
-        Images = images;
+    public void SetProductImage(Image image) =>
+        Image = image;
 
     public void SetProductMetadata(ProductMetadata metadata) =>
         Metadata = metadata;
