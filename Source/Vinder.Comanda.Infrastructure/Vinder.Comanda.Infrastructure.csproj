@@ -11,4 +11,8 @@
     <ProjectReference Include="../Vinder.Comanda.Domain/Vinder.Comanda.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="3.5.0" />
+  </ItemGroup>
+
 </Project>
