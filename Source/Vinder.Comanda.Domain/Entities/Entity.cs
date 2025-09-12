@@ -8,6 +8,9 @@ public abstract class Entity
     public DateTime CreatedAt { get; private set; } = DateTime.Now;
     public DateTime UpdatedAt { get; private set; }
 
+    public void SetIdentifier(string id) =>
+        Id = id.Trim().Normalize(NormalizationForm.FormC);
+
     public void MarkAsDeleted() =>
         IsDeleted = true;
 
