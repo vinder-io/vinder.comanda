@@ -6,4 +6,9 @@ public interface IEstablishmentRepository : IBaseRepository<Establishment>
         EstablishmentFilters filters,
         CancellationToken cancellation = default
     );
+
+    public Task<long> CountAsync(
+        EstablishmentFilters filters,
+        CancellationToken cancellation = default
+    );
 }
