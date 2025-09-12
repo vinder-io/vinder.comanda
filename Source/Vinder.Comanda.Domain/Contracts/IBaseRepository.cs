@@ -8,7 +8,7 @@ public interface IBaseRepository<TEntity>
         CancellationToken cancellation = default
     );
 
-    public Task<TEntity> InsertAsync(
+    public Task<IEnumerable<TEntity>> InsertManyAsync(
         IEnumerable<TEntity> entities,
         CancellationToken cancellation = default
     );
