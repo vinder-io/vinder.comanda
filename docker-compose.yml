@@ -1,0 +1,32 @@
+# this service provisions a MongoDB container for local development and testing,
+# using environment variables defined in .env to set up authentication.
+
+services:
+  vinder.comanda.infrastructure.mongo.database:
+    container_name: "vinder.comanda.database"
+    image: mongo:latest
+    env_file:
+      - .env
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - vinder.comanda.infrastructure.mongo.database:/data/db
+
+  vinder.comanda:
+    container_name: "vinder.comanda"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      Settings__Database__ConnectionString: ${MONGO_CONNECTIONSTRING}
+      Settings__Database__DatabaseName: ${MONGO_DATABASENAME}
+    depends_on:
+      - vinder.comanda.infrastructure.mongo.database
+
+volumes:
+  vinder.comanda.infrastructure.mongo.database:
