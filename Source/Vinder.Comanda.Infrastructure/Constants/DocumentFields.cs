@@ -14,4 +14,11 @@ public static class DocumentFields
         public const string OwnerId = "Owner._id";
         public const string SubscriptionId = "Subscription._id";
     }
+
+    public static class Customer
+    {
+        public const string Name = "Name";
+        public const string UserId = "Identity.UserId";
+        public const string Email = "Identity.Email";
+    }
 }
