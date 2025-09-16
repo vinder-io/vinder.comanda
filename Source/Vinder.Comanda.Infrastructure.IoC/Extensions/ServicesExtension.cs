@@ -8,5 +8,6 @@ public static class ServicesExtension
         var settings = services.ConfigureSettings(configuration);
 
         services.AddDataPersistence(settings);
+        services.AddMediator();
     }
 }
