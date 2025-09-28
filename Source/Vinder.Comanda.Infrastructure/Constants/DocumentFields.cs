@@ -25,4 +25,14 @@ public static class DocumentFields
         public const string Email = "Identity.Email";
         public const string IsDeleted = "IsDeleted";
     }
+
+    public static class Owner
+    {
+        public const string Id = "_id";
+        public const string Name = "Name";
+        public const string UserId = "Identity.UserId";
+        public const string Email = "Identity.Email";
+        public const string Subscription = "Subscription.Status";
+        public const string IsDeleted = "IsDeleted";
+    }
 }
