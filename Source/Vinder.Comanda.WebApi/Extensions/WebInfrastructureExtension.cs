@@ -10,5 +10,9 @@ public static class WebInfrastructureExtension
         services.AddEndpointsApiExplorer();
         services.AddCorsConfiguration();
         services.AddOpenApi();
+        services.AddFluentValidationAutoValidation(options =>
+        {
+            options.DisableDataAnnotationsValidation = true;
+        });
     }
 }
