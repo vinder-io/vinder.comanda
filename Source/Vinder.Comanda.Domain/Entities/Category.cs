@@ -4,6 +4,6 @@ public sealed class Category : Entity
 {
     public string Name { get; private set; } = default!;
 
-    public void SetCategoryName(string name) =>
+    public void SetName(string name) =>
         Name = name.Trim().Normalize(NormalizationForm.FormC);
 }

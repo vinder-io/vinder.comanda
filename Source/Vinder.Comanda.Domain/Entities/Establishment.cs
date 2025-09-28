@@ -12,18 +12,18 @@ public sealed class Establishment : Entity
     public ICollection<Product> Products { get; private set; } = [];
     public ICollection<Category> Categories { get; private set; } = [];
 
-    public void SetEstablishmentDescription(string description) =>
+    public void SetDescription(string description) =>
         Description = description.Trim().Normalize(NormalizationForm.FormC);
 
-    public void SetEstablishmentName(string name) =>
+    public void SetName(string name) =>
         Name = name.Trim().Normalize(NormalizationForm.FormC);
 
-    public void SetEstablishmentSlug(string slug) =>
+    public void SetSlug(string slug) =>
         Slug = slug.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant();
 
-    public void SetEstablishmentOwner(Owner owner) =>
+    public void SetOwner(Owner owner) =>
         Owner = owner;
 
-    public void SetEstablishmentBranding(Branding branding) =>
+    public void SetBranding(Branding branding) =>
         Branding = branding;
 }

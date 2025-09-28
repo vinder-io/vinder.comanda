@@ -5,9 +5,9 @@ public sealed class Payment : Entity
     public decimal Value { get; private set; } = default!;
     public PaymentMetadata Metadata { get; private set; } = default!;
 
-    public void SetPaymentValue(decimal value) =>
+    public void SeValue(decimal value) =>
         Value = value;
 
-    public void SetPaymentMetadata(PaymentMetadata metadata) =>
+    public void SetMetadata(PaymentMetadata metadata) =>
         Metadata = metadata;
 }

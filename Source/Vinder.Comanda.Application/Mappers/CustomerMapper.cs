@@ -7,8 +7,8 @@ public static class CustomerMapper
         Customer customer = new();
         Identity identity = new(request.UserId, request.Email);
 
-        customer.SetCustomerIdentity(identity);
-        customer.SetCustomerName(request.Name);
+        customer.SetIdentity(identity);
+        customer.SetName(request.Name);
 
         return customer;
     }

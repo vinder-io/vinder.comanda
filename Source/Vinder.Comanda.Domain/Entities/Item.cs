@@ -7,12 +7,12 @@ public sealed class Item : Entity
 
     public ItemMetadata Metadata { get; private set; } = default!;
 
-    public void SetItemUnitPrice(decimal price) =>
+    public void SetUnitPrice(decimal price) =>
         UnitPrice = price;
 
-    public void SetItemQuantity(int quantity) =>
+    public void SetQuantity(int quantity) =>
         Quantity = quantity;
 
-    public void SetItemMetadata(ItemMetadata metadata) =>
+    public void SetMetadata(ItemMetadata metadata) =>
         Metadata = metadata;
 }

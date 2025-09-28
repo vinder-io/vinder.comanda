@@ -6,9 +6,9 @@ public sealed class Order : Entity
     public OrderStatus Status { get; private set; } = default!;
     public ICollection<Item> Items { get; private set; } = [];
 
-    public void SetOrderMetadata(OrderMetadata metadata) =>
+    public void SetMetadata(OrderMetadata metadata) =>
         Metadata = metadata;
 
-    public void SetOrderStatus(OrderStatus status) =>
+    public void SetStatus(OrderStatus status) =>
         Status = status;
 }

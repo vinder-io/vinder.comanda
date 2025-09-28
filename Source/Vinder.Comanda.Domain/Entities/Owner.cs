@@ -6,12 +6,12 @@ public sealed class Owner : Entity
     public Subscription Subscription { get; private set; } = default!;
     public Identity Identity { get; private set; } = default!;
 
-    public void SetOwnerIdentity(Identity identity) =>
+    public void SetIdentity(Identity identity) =>
         Identity = identity;
 
-    public void SetOwnerSubscription(Subscription subscription) =>
+    public void SetSubscription(Subscription subscription) =>
         Subscription = subscription;
 
-    public void SetOwnerName(string name) =>
+    public void SetName(string name) =>
         Name = name.Trim().Normalize(NormalizationForm.FormC);
 }
