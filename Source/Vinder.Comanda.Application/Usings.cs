@@ -8,6 +8,7 @@ global using Vinder.Comanda.Domain.ValueObjects;
 
 global using Vinder.Comanda.Application.Mappers;
 global using Vinder.Comanda.Application.Payloads.Customer;
+global using Vinder.Comanda.Application.Payloads.Common;
 
 global using MediatR;
 global using FluentValidation;
