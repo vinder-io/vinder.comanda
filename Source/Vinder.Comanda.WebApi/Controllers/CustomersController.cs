@@ -2,24 +2,27 @@ namespace Vinder.Comanda.WebApi.Controllers;
 
 [ApiController]
 [Route("api/v1/customers")]
-public sealed class CustomersController(IMediator mediator, ILogger<CustomersController> logger) : ControllerBase
+public sealed class CustomersController(IMediator mediator) : ControllerBase
 {
+    [HttpGet]
+    public async Task<IActionResult> GetCustomersAsync(
+        [FromQuery] CustomersFetchParameters request, CancellationToken cancellation)
+    {
+        var result = await mediator.Send(request, cancellation);
+
+        // we know the switch here is not strictly necessary since we only handle the success case,
+        // but we keep it for consistency with the rest of the codebase and to follow established patterns.
+        return result switch
+        {
+            { IsSuccess: true } => StatusCode(StatusCodes.Status200OK, result.Data),
+        };
+    }
+
     [HttpPost]
     public async Task<IActionResult> CreateCustomerAsync(
-        CreateCustomerRequest request, CancellationToken cancellationToken)
+        CreateCustomerRequest request, CancellationToken cancellation)
     {
-        var result = await mediator.Send(request, cancellationToken);
-        var error = result.Error;
-
-        logger.LogInformation(
-            result.IsSuccess
-                ? "customer {Email} created successfully."
-                : "failed to create customer {Email}. Error: {Code} - {Description}",
-
-            request.Email,
-            result.IsSuccess ? null : error.Code,
-            result.IsSuccess ? null : error.Description
-        );
+        var result = await mediator.Send(request, cancellation);
 
         return result switch
         {
