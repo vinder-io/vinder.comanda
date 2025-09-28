@@ -19,7 +19,7 @@ public abstract class BaseRepository<TEntity>(IMongoDatabase database, string co
 
     public virtual async Task<TEntity> InsertAsync(TEntity entity, CancellationToken cancellation = default)
     {
-        entity.SetIdentifier(Identifier.Generate<TEntity>(prefixLetters: 4));
+        entity.SetIdentifier(Identifier.Generate<TEntity>());
 
         await _collection.InsertOneAsync(entity, cancellationToken: cancellation);
 
@@ -30,7 +30,7 @@ public abstract class BaseRepository<TEntity>(IMongoDatabase database, string co
     {
         Parallel.ForEach(entities, entity =>
         {
-            entity.SetIdentifier(Identifier.Generate<TEntity>(prefixLetters: 4));
+            entity.SetIdentifier(Identifier.Generate<TEntity>());
         });
 
         await _collection.InsertManyAsync(entities, cancellationToken: cancellation);

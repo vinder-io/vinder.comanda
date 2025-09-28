@@ -7,12 +7,9 @@ public static class Identifier
     private const string Alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static readonly RandomNumberGenerator _randomNumberGenerator = RandomNumberGenerator.Create();
 
-    public static string Generate<TResource>(int prefixLetters = 3, int randomPartLength = 22)
+    public static string Generate<TResource>(int randomPartLength = 22)
     {
-        var prefix = new string([.. typeof(TResource).Name
-            .Take(prefixLetters)
-            .Select(char.ToLowerInvariant)
-        ]);
+        var prefix = typeof(TResource).Name.ToLowerInvariant();
 
         return $"{prefix}_{RandomString(randomPartLength)}";
     }
