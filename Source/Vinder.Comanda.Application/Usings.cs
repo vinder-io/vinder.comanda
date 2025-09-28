@@ -10,3 +10,4 @@ global using Vinder.Comanda.Application.Mappers;
 global using Vinder.Comanda.Application.Payloads.Customer;
 
 global using MediatR;
+global using FluentValidation;
