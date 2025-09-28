@@ -8,7 +8,7 @@ public sealed class CustomerFilters : PaginationFilters
     public string? Email { get; private set; } = default!;
     public bool? IsDeleted { get; private set; } = default!;
 
-    public static CustomerFiltersBuilder ToBuilder() => new();
+    public static CustomerFiltersBuilder WithSpecifications() => new();
 
     public void SetIdentifier(string id) =>
         Id = id.Trim().Normalize(NormalizationForm.FormC);

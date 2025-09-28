@@ -7,7 +7,7 @@ public sealed class EstablishmentFilters : PaginationFilters
     public string? Name { get; private set; } = default!;
     public bool? IsDeleted { get; private set; } = default!;
 
-    public static EstablishmentFiltersBuilder ToBuilder() => new();
+    public static EstablishmentFiltersBuilder WithSpecifications() => new();
 
     public void SetIdFilter(string id) =>
         Id = id.Trim().Normalize(NormalizationForm.FormC);

@@ -6,7 +6,7 @@ public sealed class CreateCustomerHandler(ICustomerRepository repository) :
     public async Task<Result<CustomerDetails>> Handle(
         CreateCustomerRequest request, CancellationToken cancellationToken)
     {
-        var filters = CustomerFilters.ToBuilder()
+        var filters = CustomerFilters.WithSpecifications()
             .WithEmail(request.Email)
             .Build();
 
