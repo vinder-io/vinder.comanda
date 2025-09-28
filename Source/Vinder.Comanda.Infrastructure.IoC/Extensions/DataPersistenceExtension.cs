@@ -15,5 +15,6 @@ public static class DataPersistenceExtension
 
         services.AddTransient<IEstablishmentRepository, EstablishmentRepository>();
         services.AddTransient<ICustomerRepository, CustomerRepository>();
+        services.AddTransient<IOwnerRepository, OwnerRepository>();
     }
 }
