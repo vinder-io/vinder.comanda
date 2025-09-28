@@ -6,5 +6,6 @@ public static class ValidationExtension
     public static void AddValidation(this IServiceCollection services)
     {
         services.AddTransient<IValidator<CreateCustomerRequest>, CustomerCreationValidator>();
+        services.AddTransient<IValidator<CreateOwnerRequest>, OwnerCreationValidator>();
     }
 }
